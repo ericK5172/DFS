@@ -1,10 +1,8 @@
-
-/*#include<stdio.h>
-#include<stdlib.h>*/
 #pragma warnings(disable: 4996)
+
 #define _CRT_SECURE_NO_WARNINGS 
 #include <stdio.h>
-#include <stdlib.h>//->exit(1)->error(str)
+#include <stdlib.h>
 
 #include <stdbool.h>
 
@@ -33,7 +31,7 @@
 
 //typedef int Elem ;
 
-#include<conio.h>
+// #include<conio.h>
 
 /*void movement()
 {
@@ -55,22 +53,22 @@
 void KeyCheck() {
 	char c;
 
-	if (_kbhit()) {        //Å°º¸µå ÀÔ·Â È®ÀÎ (true / false)
-		c = _getch();      // ¹æÇâÅ° ÀÔ·Â½Ã 224 00ÀÌ µé¾î¿À°Ô µÇ±â¿¡ ¾Õ¿¡ ÀÖ´Â °ª 224¸¦ ¾ø¾Ú
-		if (c == -32) {    // -32·Î ÀÔ·ÂµÇ¸é
-			c = _getch();  // »õ·Î ÀÔ·Â°ªÀ» ÆÇº°ÇÏ¿© »óÇÏÁÂ¿ì Ãâ·Â
+	if (_kbhit()) {        //Å°ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ È®ï¿½ï¿½ (true / false)
+		c = _getch();      // ï¿½ï¿½ï¿½ï¿½Å° ï¿½Ô·Â½ï¿½ 224 00ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç±â¿¡ ï¿½Õ¿ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ 224ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		if (c == -32) {    // -32ï¿½ï¿½ ï¿½Ô·ÂµÇ¸ï¿½
+			c = _getch();  // ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·Â°ï¿½ï¿½ï¿½ ï¿½Çºï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Â¿ï¿½ ï¿½ï¿½ï¿½
 			switch (c) {
 			case 75:
-				printf("¿ÞÂÊÀ¸·Î ÀÌµ¿\n");
+				printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½\n");
 				break;
 			case 77:
-				printf("¿À¸¥ÂÊÀ¸·Î ÀÌµ¿\n");
+				printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½\n");
 				break;
 			case 72:
-				printf("À§·Î ÀÌµ¿\n");
+				printf("ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½\n");
 				break;
 			case 80:
-				printf("¾Æ·¡·Î ÀÌµ¿\n");
+				printf("ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½Ìµï¿½\n");
 				break;
 			}
 		}
@@ -149,34 +147,56 @@ StoringStack visited;
 int check_input_direction() {
 	int direction_number;
 	char c;
-	if (_kbhit()) {        //Å°º¸µå ÀÔ·Â È®ÀÎ (true / false)
-		c = _getch();      // ¹æÇâÅ° ÀÔ·Â½Ã 224 00ÀÌ µé¾î¿À°Ô µÇ±â¿¡ ¾Õ¿¡ ÀÖ´Â °ª 224¸¦ ¾ø¾Ú
-		if (c == -32) {    // -32·Î ÀÔ·ÂµÇ¸é
-			c = _getch();  // »õ·Î ÀÔ·Â°ªÀ» ÆÇº°ÇÏ¿© »óÇÏÁÂ¿ì Ãâ·Â
-			switch (c) {
-			case 75:
-				direction_number = WEST;
-				//printf("75\t");
-				break;
-			case 77:
-				direction_number = EAST;
-				//printf("77\t");
-				break;
-			case 72:
-				direction_number = NORTH;
-				//printf("72\t");
-				break;
-			case 80:
-				direction_number = SOUTH;
-				//printf("80\t");
-				break;
+    printf("Input: ");
+    scanf("%hhd", &c);
+	// if (_kbhit()) {        //Å°ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ È®ï¿½ï¿½ (true / false)
+	// 	c = _getch();      // ï¿½ï¿½ï¿½ï¿½Å° ï¿½Ô·Â½ï¿½ 224 00ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç±â¿¡ ï¿½Õ¿ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ 224ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	// 	if (c == -32) {    // -32ï¿½ï¿½ ï¿½Ô·ÂµÇ¸ï¿½
+	// 		c = _getch();  // ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·Â°ï¿½ï¿½ï¿½ ï¿½Çºï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Â¿ï¿½ ï¿½ï¿½ï¿½
+	// 		switch (c) {
+	// 		case 75:
+	// 			direction_number = WEST;
+	// 			//printf("75\t");
+	// 			break;
+	// 		case 77:
+	// 			direction_number = EAST;
+	// 			//printf("77\t");
+	// 			break;
+	// 		case 72:
+	// 			direction_number = NORTH;
+	// 			//printf("72\t");
+	// 			break;
+	// 		case 80:
+	// 			direction_number = SOUTH;
+	// 			//printf("80\t");
+	// 			break;
 
-			}
-		}
-	}
+	// 		}
+	// 	}
+	// }
+    switch (c) {
+        case 'w':
+            direction_number = WEST;
+            //printf("75\t");
+            break;
+        case 'e':
+            direction_number = EAST;
+            //printf("77\t");
+            break;
+        case 'n':
+            direction_number = NORTH;
+            //printf("72\t");
+            break;
+        case 's':
+            direction_number = SOUTH;
+            //printf("80\t");
+            break;
+
+    }
+    return direction_number;
 }
 
-int dir = check_input_direction;
+// int dir = check_input_direction();
 //direction.direction_number = dir;
 
 /*POS SetSF(int a, int b, int c, int d) {
@@ -248,7 +268,7 @@ bool movable(POS pos, int dir) {
 	}
 }
 
-// oh ¼¼·ÎÃàÀÌ x°í °¡·ÎÃàÀÌ y ÀÌ¸ç  ¿À¸¥ÂÊÀ¸·Î,¾Æ·¡ÂÊÀ¸·Î Áõ°¡(0ºÎÅÍ)
+// oh ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ xï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ y ï¿½Ì¸ï¿½  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(0ï¿½ï¿½ï¿½ï¿½)
 
 POS find_start(char maze[MAZE_SIZE][MAZE_SIZE]) {
 	POS StartCoord = { 0,0 };
@@ -315,13 +335,17 @@ char conversion(int num) {
 	char c;
 	switch (num) {
 	case NORTH:
-		c = '¡è';
+		// c = 'ï¿½ï¿½'
+        c = 'n';
 	case EAST:
-		c = '¡æ';
+		// c = 'ï¿½ï¿½';
+        c = 'e';
 	case SOUTH:
-		c = '¡é';
+		// c = 'ï¿½ï¿½';
+        c = 's';
 	case WEST:
-		c = '¡ç';
+		// c = 'ï¿½ï¿½';
+        c = 'w';
 	}
 }
 
@@ -360,26 +384,26 @@ void create() {
 	for (int i = 0; i < MAZE_SIZE; i++) {
 		for (int j = 0; j < MAZE_SIZE; j++) {
 			/*if ((i == my_loc.x) && (j == my_loc.y)) {
-				maze[i][j] = 'm';//'¡á'
+				maze[i][j] = 'm';//'ï¿½ï¿½'
 			}*/
 			if (readed_maze[i][j] == 1) {
-				maze[i][j] = 'W';//'¡á'
+				maze[i][j] = 'W';//'ï¿½ï¿½'
 
 			}
 			else if (readed_maze[i][j] == 0) {
-				maze[i][j] = 'r';//'¡à'
+				maze[i][j] = 'r';//'ï¿½ï¿½'
 
 			}
 			else if (readed_maze[i][j] == 's' || readed_maze[i][j] == 'S') {
-				maze[i][j] = 'S';//'¡Ù'
+				maze[i][j] = 'S';//'ï¿½ï¿½'
 
 			}
 			else if (readed_maze[i][j] == 'f' || readed_maze[i][j] == 'F') {
-				maze[i][j] = 'F';//'¡Ú'
+				maze[i][j] = 'F';//'ï¿½ï¿½'
 
 			}
 			else {
-				maze[i][j] = 'e';//'¡Ø'
+				maze[i][j] = 'e';//'ï¿½ï¿½'
 
 			}
 		}
@@ -402,26 +426,26 @@ void recreate(POS my_loc, char temp_maze[MAZE_SIZE][MAZE_SIZE]) {
 	for (int i = 0; i < MAZE_SIZE; i++) {
 		for (int j = 0; j < MAZE_SIZE; j++) {
 			if ((i == my_loc.x) && (j == my_loc.y)) {
-				temp_maze[i][j] = 'm';//'¡á'
+				temp_maze[i][j] = 'm';//'ï¿½ï¿½'
 			}
 			if (readed_maze[i][j] == 1) {
-				temp_maze[i][j] = 'W';//'¡á'
+				temp_maze[i][j] = 'W';//'ï¿½ï¿½'
 
 			}
 			else if (readed_maze[i][j] == 0) {
-				temp_maze[i][j] = 'r';//'¡à'
+				temp_maze[i][j] = 'r';//'ï¿½ï¿½'
 
 			}
 			else if (readed_maze[i][j] == 's' || readed_maze[i][j] == 'S') {
-				temp_maze[i][j] = 'S';//'¡Ù'
+				temp_maze[i][j] = 'S';//'ï¿½ï¿½'
 
 			}
 			else if (readed_maze[i][j] == 'f' || readed_maze[i][j] == 'F') {
-				temp_maze[i][j] = 'F';//'¡Ú'
+				temp_maze[i][j] = 'F';//'ï¿½ï¿½'
 
 			}
 			else {
-				temp_maze[i][j] = 'e';//'¡Ø'
+				temp_maze[i][j] = 'e';//'ï¿½ï¿½'
 
 			}
 		}
@@ -436,21 +460,24 @@ void reprint_maze(char temp_maze[MAZE_SIZE][MAZE_SIZE]) {
 	}
 }
 
+int dir;
 
+// void debug() {
+//     printf("DEBUG\n");
+// }
 
 int main() {
 
 	init_stack(positions.stack0.data);
 	init_stack(visited.stack0.data);
+
+    dir = check_input_direction();
+
 	//store_top = top;
 	//stack s;
 	//int a = 0, b = 0, c = 0, d = 0;
 	//SetSF(0, 0, c, d);
 
-	while (1)
-		{
-			check_input_direction();
-		}
 	char temp_maze[MAZE_SIZE][MAZE_SIZE];
 
 	int test_maze[8][8] = {
@@ -495,7 +522,8 @@ int main() {
 	//POS my_loc;
 	//my_loc = my_location(maze, dir);
 	while (!((positions.stack0.data->pos.x == finish.x) && (positions.stack0.data->pos.y == finish.y))) {
-		push(positions.stack0.data, e);
+		//printf("e");
+        push(positions.stack0.data, e);
 		push(visited.stack0.data, e);
 		if ((positions.stack0.data->pos.x == finish.x) && (positions.stack0.data->pos.y == finish.y)) {
 			printf("Path Found!");
@@ -508,7 +536,7 @@ int main() {
 		}
 		else {//if(!movable)
 			push(visited.stack0.data, e);
-			cur_pos = pop(positions.stack0.data, e).pos;
+			cur_pos = pop(positions.stack0.data).pos;
 			if (is_empty(positions.stack0.data)) {
 				printf("This Maze Has No Path!\n");
 			}
@@ -611,23 +639,23 @@ int main() {
 			//	temp_maze[i][j] = 'm';
 			//}
 			if (readed_maze[i][j] == 1) {
-				temp_maze[i][j] = 'W';//'¡á'
+				temp_maze[i][j] = 'W';//'ï¿½ï¿½'
 
 			}
 			else if (readed_maze[i][j] == 0) {
-				temp_maze[i][j] = 'r';//'¡à'
+				temp_maze[i][j] = 'r';//'ï¿½ï¿½'
 
 			}
 			else if (readed_maze[i][j] == 's' || readed_maze[i][j] == 'S') {
-				temp_maze[i][j] = 'S';//'¡Ù'
+				temp_maze[i][j] = 'S';//'ï¿½ï¿½'
 
 			}
 			else if (readed_maze[i][j] == 'f' || readed_maze[i][j] == 'F') {
-				temp_maze[i][j] = 'F';//'¡Ú'
+				temp_maze[i][j] = 'F';//'ï¿½ï¿½'
 
 			}
 			else {
-				temp_maze[i][j] = 'e';//'¡Ø
+				temp_maze[i][j] = 'e';//'ï¿½ï¿½
 		}
 			for (int i = 0; i < MAZE_SIZE; i++) {
 				for (int j = 0; j < MAZE_SIZE; j++) {
